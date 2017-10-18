@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	
+	<!--  Script that holds the submit registration Ajax JS Function-->
+	<script src='js/register.js'></script>
+	
     <title>WKU Sign Up</title>
 
     <!-- Bootstrap -->
@@ -64,7 +68,7 @@
                   </div>
                   <!--Buttons-->
                   <!-- <button  class="btn btn-danger mx-auto d-block" type="button">Sign In</button> -->
-                  <button class= "btn btn-success mx-auto d-block" type="submit">Sign Up</button>
+                  <button type="button" class= "btn btn-success mx-auto d-block" onClick="submitReg()">Sign Up</button>
                 </div> <!--col-md-6 offset-md-3-->
               </div><!--row-->
             </div><!--container-->
@@ -88,6 +92,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+
 
   </body>
 </html>
