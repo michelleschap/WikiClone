@@ -13,6 +13,8 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+     <!-- Font Awesome-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 	
 	<!--Create custom javascript for this page  - Includes login Ajax function-->
 	<script src='js/login.js'></script>
@@ -25,7 +27,14 @@
   <body onload="loadFunctions()">
 
     <!--Custom CSS-->
-    <!-- <style type="text/css"> </style> -->
+    <style>
+      /*resize the content to the screen*/
+      @media only screen and (min-width: 576px) {
+        .box{
+          width: 60%;
+        }
+      }
+    </style>
 
     <!--Navigation-->
     <!--Add navbar-light bg-faded  to make navbar visiable-->
@@ -56,14 +65,24 @@
       <!--Align the child container to the parent-->
       <div class="container align-self-center">
         <!-- Hold search image-->
-        <img src="img/search.jpg" class ="img-fluid mx-auto d-block" alt="Search Image" style = "width: 60%">
+        <img src="img/search.jpg" class ="img-fluid mx-auto d-block box" alt="Search Image" >
         <form name="search_box">
           <!-- Center the childern -->
           <center>
-            <!-- text box to input keyword to search -->
-            <input class="form-control" type="text" name="search" placeholder="Search" style ="width: 60%; margin-top: 20px;">
-            <!-- button for search -->
-            <button class="btn btn-success mt-3 mx-auto d-block" type="submit">Search</button>
+            <!--Search Bar-->
+            <div class="input-group box mt-3">
+              <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2">
+              <span class="input-group-addon" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i></span>
+            </div>
+
+            <div class="mt-3">
+              <button type="button" class="btn btn-secondary btn-sm hidden-xs-down">Helm Library</button>
+              <button type="button" class="btn btn-secondary btn-sm hidden-xs-down">TCCW</button>
+              <button type="button" class="btn btn-secondary btn-sm hidden-xs-down">Diddle Arena</button>
+              <button type="button" class="btn btn-secondary btn-sm hidden-md-down">Mass Media</button>
+              <button type="button" class="btn btn-secondary btn-sm hidden-md-down">Snell</button>
+              <button type="button" class="btn btn-secondary btn-sm hidden-lg-down">Cravens Library</button>
+            </div>
           </center>
         </form>
       </div>
