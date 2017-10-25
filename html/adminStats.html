@@ -31,11 +31,12 @@
   <!--This style scales the size of the flex to 50% on small screens-->
   <style>
     @media only screen and (min-width: 768px) {
-      [class*="box"]{
+      .box{
         /*background-color: lightblue;*/
         height: 100vh;
       }
     }
+
   </style>
 
   <!--Custom CSS-->
@@ -50,7 +51,7 @@
     <div class="btn-group ml-auto">
       <!--Button for dropdown-->
 
-      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btnHolderName"></button>
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btnHolderName"><i class="fa fa-user-secret" aria-hidden="true"></i></button>
       <div class="dropdown-menu dropdown-menu-right">
         <div class = "mx-2" >
           <input  class="dropdown-item form-control" type="text" id="Email" placeholder="email">
