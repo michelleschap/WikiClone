@@ -97,7 +97,9 @@ function isLoggedOutModifyHomeDrop()
 	display(a);
 	display(b);
 	display(c);
-	d.innerText = "Account ";
+	//Adds user profile icon
+	d.innerHTML = '<i class="fa fa-user" aria-hidden="true"></i>';
+	// d.innerText = "Account";
 }
 
 function signUp()
