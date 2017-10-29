@@ -16,6 +16,9 @@
      <!-- Font Awesome-->
     <link rel="stylesheet" href="css/font-awesome.min.css">
 	
+	<!--Create custom javascripts for this page  - Includes login Ajax function-->
+	<script src='js/login.js'></script>
+	<script src='js/loginpage.js'></script>
 	
 
 
@@ -51,7 +54,7 @@
               <input  class="dropdown-item form-control" type="password" id="Password" placeholder="password" >
               <button class="dropdown-item " type="button" id="LogIn" onclick="submitLogin()">Log In</button>
               <button class="dropdown-item" type="button" id="SignUp" onclick="signUp()">Sign Up</button>
-              <button class="dropdown-item" type="button" id="CreatePage" style="display: none;">Create Page</button>
+              <button class="dropdown-item" type="button" id="CreatePage" onclick="createPageLink()" style="display: none;">Create Page</button>
               <button class="dropdown-item example" type="button" id="SignOut" style="display: none;" onclick="logOut()">Sign Out</button>
             </div>
           </div>

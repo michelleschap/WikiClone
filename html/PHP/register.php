@@ -58,11 +58,29 @@ if(isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['email']) &&
 			$password = hash('ripemd160', $password);
 			//Insert into DB
 			//prepare and bind
-			$stmt = $conn->prepare("INSERT INTO account (first_name, last_name, password, email, user_level) VALUES (?, ?, ?, ?, ?)");
-			$stmt->bind_param("sssss", $fname, $lname, $password, $email, $accountLevel);
+			$stmt = $conn->prepare("INSERT INTO account (first_name, last_name, email, user_level, password) VALUES (?, ?, ?, ?, ?)");
+			$stmt->bind_param("sssss", $fname, $lname, $email, $accountLevel, $password);
 			//execute
 			$stmt->execute();
 			
+			
+			//Get User ID from the db so we can auto login and store the id for page creation
+			//in the session variables.
+			//**************************
+			$stmt = $conn->prepare('SELECT * FROM account WHERE email = ? AND password = ?');
+			$stmt->bind_param('ss', $email, $password);
+			$stmt->execute();
+			
+			$result = $stmt->get_result();
+			while ($row = $result->fetch_assoc()) {
+				$user_id = $row["user_id"];
+				break;
+			}
+			//**************************
+			$user_id = "";
+			
+			
+			$_SESSION['userid'] = $user_id;
 			$_SESSION['username'] = $email;
 			$_SESSION['pass'] = $password;
 			$_SESSION['acclv'] = $accountLevel;

@@ -32,6 +32,7 @@ if(isset($_POST['email']) && isset($_POST['pass'])){
 			$loginSuccessful=true;
 			$accountLevel = $row["user_level"];
 			$name = $row["first_name"];
+			$userId = $row["user_id"];
 			break;
 		}
 		
@@ -41,6 +42,7 @@ if(isset($_POST['email']) && isset($_POST['pass'])){
 			$_SESSION['pass'] = $pass;
 			$_SESSION['acclv'] = $accountLevel;
 			$_SESSION['name'] = $name;
+			$_SESSION['userid'] = $userId;
 			echo "1";
 		}else{
 			//Login failed

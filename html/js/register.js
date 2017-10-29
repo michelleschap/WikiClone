@@ -58,13 +58,13 @@ function submitReg()
 					  location.href = "http://104.145.83.147/";
 				  }else if(this.responseText=="2"){
 					  //2 Indicates that the email already exists
-					  alert("There's an email already associated with this account!")
+					  alert("There's an email already associated with this account! (Error: 1002")
 				  }else if(this.reponseText=="3"){
 					  //3 Indicates error occured.
-					  alert("Unhandled Exception - Please try again later!")
+					  alert("Unhandled Exception - Please try again later! (Error: 1003)")
 				  }else{
 					  //Shouldn't reach here - failsafe
-					  alert("Unhandled Exception - Please try again later!")
+					  alert("Unhandled Exception - Please try again later! (Error: case else - 1004+)" + this.responseText)
 				  }
 			}
 		};
