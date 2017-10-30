@@ -39,7 +39,9 @@ function isLoggedOutModifyHomeDrop()
 	display(a);
 	display(b);
 	display(c);
-	d.innerText = "Account ";
+	//Adds user icon on log in button
+	d.innerHTML = '<i class = "fa fa-user" aria-hidden="true"></i>  ';
+	// d.innerText = "Account ";
 }
 
 //logout function
