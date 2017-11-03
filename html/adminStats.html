@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title>Admin Stats</title>
-  <!-- <link rel="shortcut icon" href="img/icon/favicon.ico"> -->
+  <link rel="shortcut icon" href="img/icon/favicon.ico">
 
 
   <!-- Bootstrap -->
@@ -18,8 +18,9 @@
   <link rel="stylesheet" href="css/font-awesome.min.css">
 
 
-  <!--Create custom javascript for this page  - Includes login Ajax function-->
-  <script src='js/login.js'></script>
+  <!--Create custom javascripts for this page  - Includes login Ajax function-->
+	<script src='js/login.js'></script>
+	<script src='js/adminStatsPage.js'></script>
 
 
 </head>
@@ -55,11 +56,11 @@
       <div class="dropdown-menu dropdown-menu-right">
         <div class = "mx-2" >
           <input  class="dropdown-item form-control" type="text" id="Email" placeholder="email">
-          <input  class="dropdown-item form-control" type="password" id="Password" placeholder="password" >
-          <button class="dropdown-item " type="button" id="LogIn" onclick="submitLogin()">Log In</button>
-          <button class="dropdown-item" type="button" id="SignUp" onclick="signUp()">Sign Up</button>
-          <button class="dropdown-item" type="button" id="CreatePage" style="display: none;">Create Page</button>
-          <button class="dropdown-item example" type="button" id="SignOut" style="display: none;" onclick="logOut()">Sign Out</button>
+              <input  class="dropdown-item form-control" type="password" id="Password" placeholder="password" >
+              <button class="dropdown-item " type="button" id="LogIn" onclick="submitLogin()">Log In</button>
+              <button class="dropdown-item" type="button" id="SignUp" onclick="signUp()">Sign Up</button>
+              <button class="dropdown-item" type="button" id="CreatePage" onclick="createPageLink()" style="display: none;">Create Page</button>
+              <button class="dropdown-item example" type="button" id="SignOut" style="display: none;" onclick="logOut()">Sign Out</button>
         </div>
       </div>
     </div>
@@ -79,11 +80,11 @@
           </div>
           <!--Nested cell B, flex center-->
           <div class="align-self-center col-sm-12" style="font-size: 70px; color: gray;">
-            <p align="center"><b>19,000</b></p>
+            <p id= "totalUserCounter" align="center"><b></b></p>
           </div>
           <!--Nested cell C, flex bottom-->
           <div class="align-self-end col-sm-12 mb-5" style="color: green;">
-            <p align="center"><i>+4% From Last Week</i></p>
+            <p id="lblLastUpdate" align="center"><i></i></p>
           </div>
         </div><!--Nested row to cell A-->
       </div><!--Outer cell A-->
@@ -98,11 +99,11 @@
           </div>
           <!--Nested cell B, flex center-->
           <div class="align-self-center col-sm-12" style="font-size: 70px; color: white;">
-            <p align="center"><b>Search</b></p>
+            <p id="lblTopPage" align="center"><b></b></p>
           </div>
           <!--Nested cell C, flex bottom-->
           <div class="align-self-end col-sm-12 mb-5" style="color: white;">
-            <p align="center"><i><b>Last Week: </b>Create Account</i></p>
+            <p id="lblPageViewCount" align="center"><i><b>Times Viewed : </b></i></p>
           </div>
         </div><!--Nested row to cell B-->
       </div><!--Outer cell B-->
