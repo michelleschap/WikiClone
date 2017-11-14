@@ -63,8 +63,8 @@ function loadFunctions()
 function populatePage()
 {
 	var lblTotalUser = document.getElementById('totalUserCounter');
-	var lblTopPage = document.getElementById('lblTopPage');
 	var lblLastUpdate = document.getElementById('lblLastUpdate');
+	var lblTopPage = document.getElementById('lblTopPage');
 	var lblPageViewCount = document.getElementById('lblPageViewCount');
 	
 	//Ajax call to run php file that gets number of users in db
@@ -82,4 +82,24 @@ function populatePage()
 	//Fill in Last Updated field - which is now
 	var date =  new Date().toLocaleString();
 	lblLastUpdate.innerText = "Last Updated : " + date;
+	
+	$topPageName = "";
+	$topPageViews = 0;
+	
+	//Fill in top views section
+	var xhttp = new XMLHttpRequest();
+	xhttp.open('POST', 'http://104.145.83.147/PHP/getTopPage.php', true);
+	xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			response = this.responseText;
+			var arrayz = response.split("~split~")
+			$topPageViews = arrayz[0];
+			$topPageName = arrayz[1];
+			
+			lblTopPage.innerText = $topPageName;
+			lblPageViewCount.innerText = "Times Viewed : "+$topPageViews;
+		}
+	};
+	xhttp.send(null);
 }

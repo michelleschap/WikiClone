@@ -51,3 +51,9 @@ function logOut()
 	destroySession();
 	isLoggedOutModifyHomeDrop();
 }
+
+//View DSU
+function viewDSU()
+{
+	location.href = "http://104.145.83.147/viewPage.php?pageID=5";
+}
