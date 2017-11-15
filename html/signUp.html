@@ -13,6 +13,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+	
 
   </head>
 
@@ -57,15 +58,18 @@
                   </div>
                   <!--email-->
                   <div class="form-group">
-                    <input type="email" class="form-control" id="email"  placeholder="Your email">
+                    <input type="email" class="form-control" id="email"  placeholder="address@email.com">
+					 <small id="emailHelp" class="form-text text-muted">Please use appropriate email</small>
                   </div>
                   <!--Password-->
                   <div class="form-group">
                     <input type="password" class="form-control" id="password"  placeholder="Password">
-                  </div>
+					<small id="passwordHelpBlock" class="form-text text-muted">8-20 characters long, contain letters, special, and numbers.</small>
+				  </div>
                   <div class="form-group">
                     <input type="password" class="form-control" id="confirmPassword"  placeholder="Confirm Password">
-                  </div>
+					<small id="passwordHelpBlock" class="form-text text-muted">Does not match</small>
+				  </div>
                   <!--Buttons-->
                   <!-- <button  class="btn btn-danger mx-auto d-block" type="button">Sign In</button> -->
                   <button type="button" class= "btn btn-success mx-auto d-block" onClick="submitReg()">Sign Up</button>
@@ -76,17 +80,6 @@
         </form>
       </div><!--container -->
     </div><!--container-fluid-->
-
-   <!--  <form>
-      <div class="form-group">
-        <label for="formGroupExampleInput">Example label</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-      </div>
-      <div class="form-group">
-        <label for="formGroupExampleInput2">Another label</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-      </div>
-    </form> -->
          
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
