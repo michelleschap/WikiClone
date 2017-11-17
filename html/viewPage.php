@@ -102,6 +102,11 @@ echo"<!DOCTYPE html>
       /*background-color: lightblue;*/
       width: 60%
     }
+    .tag{
+      /*background-color: lightblue;*/
+      width: 60%;
+      display: none;
+    }
   }
 
     </style>
@@ -109,6 +114,7 @@ echo"<!DOCTYPE html>
     <!--Navigation-->
     <nav class='navbar navbar-light bg-faded'>
   <div class='form-inline'>
+   <a class='navbar-brand tag' href='#''>WKU Wiki</a>
     <div>
       <form class='form-inline'>
         <div class='input-group box ' name='search_box'>
@@ -119,7 +125,7 @@ echo"<!DOCTYPE html>
     </div>
     <div class='btn-group navbar-toggler-right'>
       <!--Button for dropdown-->
-
+      
       <button type='button' class='btn btn-secondary dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' id='btnHolderName'></button>
       <div class='dropdown-menu dropdown-menu-right'>
         <div class = 'mx-2' >
