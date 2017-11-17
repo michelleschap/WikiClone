@@ -27,8 +27,6 @@ if($dbConnection){
 			break;
 		}
 		
-		
-		
 		//Load and populate the body
 		$stmt = $conn->prepare('SELECT * FROM subsection WHERE page_id = ?');
 		$stmt->bind_param('i', $pg_id);
@@ -99,6 +97,12 @@ echo"<!DOCTYPE html>
         /*Indent paragraph text*/
         text-indent: 3em
       }
+      @media only screen and (max-width: 768px) {
+    .box{
+      /*background-color: lightblue;*/
+      width: 60%
+    }
+  }
 
     </style>
 
