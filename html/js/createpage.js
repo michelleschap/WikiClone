@@ -1,18 +1,20 @@
 var entCount = 1;
 
+
 function addField()
 {
 	entCount++;
 	var fieldDivs = document.getElementById('pageFields');
 	var container = document.createElement("div");
 	var newData =
-	'<div class="col-sm-12 mt-3">\n' +
+	'<div>\n' +
 	' <h2>Topic ' + entCount +'</h2>\n' +
 	'  <input type="text" class="form-control" id="supportingTopic'+ entCount +'" placeholder="Supporting Topic">\n' + 
 	'  <div class="form-group floating-label-form-group controls mt-2">\n' + 
 	'	  <!-- <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>\n' + 
 	'	  <p class="help-block text-danger"></p> -->\n' + 
 	'	<textarea class="form-control" id="supportingContent'+ entCount +'" placeholder="Supporting Content"></textarea>\n' +  
+		'<button type="button" onClick="addField(); style.display= \'none\'" class="btn btn-light btn-sm float-right mt-1"><b> + </b></button>\n'+
 	'  </div>\n'+
 	'</div>\n'
 	container.innerHTML = newData;
