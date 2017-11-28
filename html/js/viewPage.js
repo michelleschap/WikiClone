@@ -78,7 +78,7 @@ function logOut()
 //The onload functions
 //@Override login.js
 function loadFunctions()
-{
+{	
 	if(isLoggedIn()){
 		isLoggedInModifyHomeDrop();
 	}else{

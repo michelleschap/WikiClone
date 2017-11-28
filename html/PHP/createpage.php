@@ -55,18 +55,26 @@ if(isset($_POST['pageSubject']) && isset($_POST['pageSupportingTopic']) && isset
 			//**************************
 			
 			
-			
-			
 			//**************************
 			//Store information in subsection table
 			//version is 0 beacuse this is create page
 			$page_version = "0";
-			//PREPARE
-			$stmt = $conn->prepare("INSERT INTO subsection (section_name, version, words, page_id) VALUES (?, ?, ?, ?)");
-			//BIND
-			$stmt->bind_param("ssss", $page_topic, $page_version, $page_content, $page_id);
-			//EXECUTE
-			$stmt->execute();
+			$counter = 0;
+			$arr1 = explode('1o0ajdksaxidgfau',$page_topic);
+			$arr2 = explode('1o0ajdksaxidgfau',$page_content);
+			foreach ($arr1 as $value) {
+				if($value!=""){
+					$sql = "INSERT INTO subsection (section_name, version, words, page_id) VALUES (?, ?, ?, ?)";
+					//PREPARE
+					$stmt = $conn->prepare($sql);
+					//BIND
+					$stmt->bind_param("ssss", $value, $page_version, $arr2[$counter], $page_id);
+					//EXECUTE
+					$stmt->execute();
+					$counter++;
+				}
+			}
+			
 			//success
 			echo "1";
 			

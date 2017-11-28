@@ -1,15 +1,38 @@
+var entCount = 1;
+
+function addField()
+{
+	entCount++;
+	var fieldDivs = document.getElementById('pageFields');
+	var container = document.createElement("div");
+	var newData =
+	'<div class="col-sm-12 mt-3">\n' +
+	' <h2>Topic ' + entCount +'</h2>\n' +
+	'  <input type="text" class="form-control" id="supportingTopic'+ entCount +'" placeholder="Supporting Topic">\n' + 
+	'  <div class="form-group floating-label-form-group controls mt-2">\n' + 
+	'	  <!-- <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>\n' + 
+	'	  <p class="help-block text-danger"></p> -->\n' + 
+	'	<textarea class="form-control" id="supportingContent'+ entCount +'" placeholder="Supporting Content"></textarea>\n' +  
+	'  </div>\n'+
+	'</div>\n'
+	container.innerHTML = newData;
+	fieldDivs.appendChild(container); 
+	
+}
+
 function submitPage()
 {
 	//run a double check to make sure they're currently logged in and haven't timed out
 	if(isLoggedIn()==false){
-		redirHome();
+		alert("here");
+		//redirHome();
 	}else{
 		var failed = false;
 		var failedmessage = "";
 		
 		var pageSubject = document.getElementById('pageSubject').value;
-		var pageSupportingTopic = document.getElementById('supportingTopic').value;
-		var pageSupportingContent = document.getElementById('supportingContent').value;
+		var pageSupportingTopic = document.getElementById('supportingTopic1').value;
+		var pageSupportingContent = document.getElementById('supportingContent1').value;
 		var pageSupportingTags = document.getElementById('contentTags').value;
 		
 		if(pageSubject.length==0){
@@ -35,6 +58,17 @@ function submitPage()
 		if(failed==false){
 			//The fields are not empty -- submit to create page script.
 			//Create the xhttp request
+			
+			//Gather all the topicNames and use concatinate them together using ~1o0ajdksaxidgfau~ as a splitter
+			pageSupportingTopic = "";
+			pageSupportingContent = "";
+			for(i=1;i<=entCount;i++){
+				var topicTitle = document.getElementById('supportingTopic' + i).value;
+				var toppicContent = document.getElementById('supportingContent' + i).value;
+				pageSupportingTopic += (topicTitle + "1o0ajdksaxidgfau");
+				pageSupportingContent += (toppicContent + "1o0ajdksaxidgfau");
+			}	
+			
 			var xhttp = new XMLHttpRequest();
 			var params = 'pageSubject='+pageSubject+'&pageSupportingTopic='+pageSupportingTopic+'&pageSupportingContent='+pageSupportingContent+'&pageSupportingTags='+pageSupportingTags;
 			xhttp.open('POST', 'http://104.145.83.147/PHP/createpage.php', true);
