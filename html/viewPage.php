@@ -119,8 +119,8 @@ echo"<!DOCTYPE html>
   <div class='form-inline'>
    <a class='navbar-brand tag' href='#''>WKU Wiki</a>
     <div>
-      <form class='form-inline'>
-        <div class='input-group box ' name='search_box'>
+      <form class='form-inline' name = 'search_box'>
+        <div class='input-group box ' name='search'>
           <input type='text' class='form-control' placeholder='Search' aria-describedby='basic-addon2' name='search' >
           <span class='input-group-addon' id='basic-addon2'><i class='fa fa-search' aria-hidden='true'></i></span>
         </div>
@@ -137,6 +137,9 @@ echo"<!DOCTYPE html>
           <button class='dropdown-item ' type='button' id='LogIn' onclick='submitLogin()'>Log In</button>
           <button class='dropdown-item' type='button' id='SignUp' onclick='signUp()'>Sign Up</button>
           <button class='dropdown-item' type='button' id='CreatePage' onclick='createPageLink()' style='display: none;'>Create Page</button>
+
+          <button class='dropdown-item example' type='button' id='EditPage' style='display: none;' onclick='#'>Edit Page</button>
+          <button class='dropdown-item example' type='button' id='DeletePage' style='display: none;' onclick='#'>Delete Page</button>
           <button class='dropdown-item example' type='button' id='SignOut' style='display: none;' onclick='logOut()'>Sign Out</button>
         </div>
       </div>

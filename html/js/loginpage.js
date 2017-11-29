@@ -6,39 +6,51 @@ function getFocus()
 
 function isLoggedInModifyHomeDrop()
 {
-	var x = document.getElementById('SignOut');
-	var y = document.getElementById('CreatePage');
-	var z = document.getElementById('SignUp');
-	var a = document.getElementById('LogIn');
-	var b = document.getElementById('Email');
-	var c = document.getElementById('Password');
-	var d = document.getElementById('btnHolderName');
+	// var x = document.getElementById('SignOut');
+	// var y = document.getElementById('CreatePage');
+	// var z = document.getElementById('SignUp');
+	// var a = document.getElementById('LogIn');
+	// var b = document.getElementById('Email');
+	// var c = document.getElementById('Password');
+	// var d = document.getElementById('btnHolderName');
 	
-	display(x);
-	display(y);
-	hide(z);
-	hide(a);
-	hide(b);
-	hide(c);
+	// display(x);
+	// display(y);
+	// hide(z);
+	// hide(a);
+	// hide(b);
+	// hide(c);
+
+	var c = document.getElementById('isLogIn');
+	var d = document.getElementById('isLogOut');
+	
+	display(c);
+	hide(d);
 	d.innerText = glob_firstname + " ";
 }
 
 function isLoggedOutModifyHomeDrop()
 {
-	var x = document.getElementById('SignOut');
-	var y = document.getElementById('CreatePage');
-	var z = document.getElementById('SignUp');
-	var a = document.getElementById('LogIn');
-	var b = document.getElementById('Email');
-	var c = document.getElementById('Password');
-	var d = document.getElementById('btnHolderName');
+	// var x = document.getElementById('SignOut');
+	// var y = document.getElementById('CreatePage');
+	// var z = document.getElementById('SignUp');
+	// var a = document.getElementById('LogIn');
+	// var b = document.getElementById('Email');
+	// var c = document.getElementById('Password');
+	// var d = document.getElementById('btnHolderName');
 	
-	hide(x);
-	hide(y);
-	display(z);
-	display(a);
-	display(b);
-	display(c);
+	// hide(x);
+	// hide(y);
+	// display(z);
+	// display(a);
+	// display(b);
+	// display(c);
+
+	var c = document.getElementById('isLogIn');
+	var d = document.getElementById('isLogOut');
+	
+	display(d);
+	hide(c);
 	//Adds user icon on log in button
 	d.innerHTML = '<i class = "fa fa-user" aria-hidden="true"></i>  ';
 	// d.innerText = "Account ";
