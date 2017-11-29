@@ -117,7 +117,7 @@ echo"<!DOCTYPE html>
     <!--Navigation-->
     <nav class='navbar navbar-light bg-faded'>
   <div class='form-inline'>
-   <a class='navbar-brand tag' href='#''>WKU Wiki</a>
+   <a class='navbar-brand tag' href='index.html''>WKU Wiki</a>
     <div>
       <form class='form-inline' name = 'search_box'>
         <div class='input-group box ' name='search'>
