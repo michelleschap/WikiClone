@@ -123,7 +123,7 @@ echo"<!DOCTYPE html>
         <div class='input-group box ' name='search'>
           <input type='text' class='form-control' placeholder='Search' aria-describedby='basic-addon2' name='search' >
           <span class='input-group-btn'>
-                <button class='btn btn-secondary' type='button' onclick='searchBarClicked()''><i class='fa fa-search' aria-hidden='true'></i></button>
+                <button class='btn btn-secondary' type='button' onclick='searchBarClicked()'><i class='fa fa-search' aria-hidden='true'></i></button>
               </span>
         </div>
       </form>
@@ -140,8 +140,7 @@ echo"<!DOCTYPE html>
           <button class='dropdown-item' type='button' id='SignUp' onclick='signUp()'>Sign Up</button>
           <button class='dropdown-item' type='button' id='CreatePage' onclick='createPageLink()' style='display: none;'>Create Page</button>
 
-          <button class='dropdown-item example' type='button' id='EditPage' style='display: none;' onclick='#'>Edit Page</button>
-          <button class='dropdown-item example' type='button' id='DeletePage' style='display: none;' onclick='#'>Delete Page</button>
+          <button class='dropdown-item example' type='button' id='EditPage' style='display: none;' onclick='redirEditPage()'>Edit Page</button>
           <button class='dropdown-item example' type='button' id='SignOut' style='display: none;' onclick='logOut()'>Sign Out</button>
         </div>
       </div>
@@ -172,7 +171,7 @@ echo"<!DOCTYPE html>
     <h1 id='pg_title'><b>".$pg_title."</b></h1>
     <div class='container mt-3'>
     </div>
-	".$Body."
+	".$Body."<input type='hidden' id='pageIDHolder' value='".$pg_id."' /> 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
